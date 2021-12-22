@@ -35,7 +35,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "An app that helps DMs manage a homebrew world.",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
