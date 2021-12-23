@@ -8,6 +8,9 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-pro-sidebar": "^0.7.1",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.2"
   },
@@ -37,15 +40,5 @@
   },
   "description": "An app that helps DMs manage a homebrew world.",
   "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BNag87/WM.git"
-  },
-  "author": "BNag87",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BNag87/WM/issues"
-  },
-  "homepage": "https://github.com/BNag87/WM#readme"
+  "devDependencies": {}
 }

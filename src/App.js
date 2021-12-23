@@ -3,6 +3,7 @@ import './App.css';
 
 //===================COMPONENT IMPORTS
 import TopNavbar from './Components/TopNavbar/C-TopNavBar';
+import Sidebar from './Components/Sidebar/C-Sidebar';
 
 //===================APP STUFF
 //NEED ROUTES
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <TopNavbar/>
+      <Sidebar />
     </>
   );
 }
