@@ -4,6 +4,7 @@ import './App.css';
 //===================COMPONENT IMPORTS
 import TopNavbar from './Components/TopNavbar/C-TopNavBar';
 import Sidebar from './Components/Sidebar/C-Sidebar';
+import NPC_Generator from './Components/NPCGen/C-NPCGen';
 
 //===================APP STUFF
 //NEED ROUTES
@@ -13,7 +14,10 @@ function App() {
   return (
     <>
       <TopNavbar/>
-      <Sidebar />
+      <div className="pairedCompWrapper">
+        <Sidebar />
+        <NPC_Generator />
+      </div>
     </>
   );
 }
