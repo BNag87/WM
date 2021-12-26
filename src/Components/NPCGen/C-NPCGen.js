@@ -11,12 +11,44 @@ var NPC_Generator_Style = {
 
     // CSS Rules for anything with a div tag in this component
     mainWrap: {
-        background:
-            'linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5))',
+    // this is an outer wrapper to contain other containers
+        background: 'linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5))',
+        border: 'solid 2px rgba(150,90,85,0.7)',
+        borderRadius: '8px',
+        
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+
         color: 'white',
+        
         height: '10%',
         padding: '10px',
         margin: '50px',
+        
+        width: '90%',
+
+        textAlign: 'center',
+    },
+
+    innerWrap: {
+        // this is an inner wrapper to contain elements
+        background: 'rgba(230,230,230,0.4)',
+        borderRadius: '25px',
+
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        color: 'white',
+        
+        height: '10%',
+        padding: '10px',
+        margin: '10px',
+
+
+        
         textAlign: 'center',
     },
 
@@ -24,14 +56,15 @@ var NPC_Generator_Style = {
       
         color: '#rgb(203, 186, 151)',
         textShadow: ' rgb(50, 50, 50) 2px 2px 1px',
-        fontSize: '3.3rem',
+        fontSize: '2.3rem',
         fontFamily: 'Cambria',
-        margin: '0.75rem',
-        fontWeight: '300',
+        fontVariant: 'small-caps',
+        margin: '5px',
         },
 
-    compBtnNoneHover : {
+
 // This is the default css style for a button element. used when the page loads
+    compBtnNoneHover : {
         backgroundColor: "rgb(100,250,100)",
         color: "black",
         border: "outset",
@@ -121,8 +154,6 @@ const setBTNClickUp = (e) => {
 }
 
     // ========================ACTUAL COMPONENT
-isMouseHovering = false;
-
   const NPC_Generator = () => {
       
     return (
@@ -131,30 +162,33 @@ isMouseHovering = false;
 
       <div style={NPC_Generator_Style.mainWrap}>
         
-        <h2 style={NPC_Generator_Style.h1}>
+        <h2 style={NPC_Generator_Style.h2}>
             NPC Generator
         </h2>
 
-        <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
-            Randomise
-        </div>
+        <div style={NPC_Generator_Style.innerWrap}>
 
-        <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
-            New NPC
-        </div>
+            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+                Randomise
+            </div>
 
-        <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
-            Save
-        </div>
+            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+                New NPC
+            </div>
 
-        <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
-            Load
-        </div>
+            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+                Save
+            </div>
 
-        <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
-            Delete
-        </div>
+            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+                Load
+            </div>
 
+            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+                Delete
+            </div>
+
+        </div>
       </div>
     );
   };
