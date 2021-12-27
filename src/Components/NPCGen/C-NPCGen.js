@@ -7,11 +7,12 @@ let isMouseHovering = false;
 
 
 // ========================CSS VARIABLES
+// CSS Rules for anything with a div tag in this component
 var NPC_Generator_Style = {
-
-    // CSS Rules for anything with a div tag in this component
+    
+    // mainWrap is an outer wrapper to contain other containers
     mainWrap: {
-    // this is an outer wrapper to contain other containers
+    
         background: 'linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5))',
         border: 'solid 2px rgba(150,90,85,0.7)',
         borderRadius: '8px',
@@ -32,8 +33,9 @@ var NPC_Generator_Style = {
         textAlign: 'center',
     },
 
+// innerWrap is an inner wrapper to contain elements
     innerWrap: {
-        // this is an inner wrapper to contain elements
+        
         background: 'rgba(230,230,230,0.4)',
         borderRadius: '25px',
 
@@ -47,8 +49,6 @@ var NPC_Generator_Style = {
         padding: '10px',
         margin: '10px',
 
-
-        
         textAlign: 'center',
     },
 
@@ -56,24 +56,41 @@ var NPC_Generator_Style = {
       
         color: '#rgb(203, 186, 151)',
         textShadow: ' rgb(50, 50, 50) 2px 2px 1px',
+
         fontSize: '2.3rem',
         fontFamily: 'Cambria',
         fontVariant: 'small-caps',
+
         margin: '5px',
         },
 
+    h3: {
+        
+        color: '#rgb(203, 186, 151)',
+        textShadow: ' rgb(50, 50, 50) 1px 2px 3px',
+
+        fontSize: '1.5 rem',
+        fontFamily: 'Cambria',
+        fontVariant: 'small-caps',
+
+        margin: '5px',
+        },        
 
 // This is the default css style for a button element. used when the page loads
     compBtnNoneHover : {
         backgroundColor: "rgb(100,250,100)",
+        boxShadow: "2px 2px 3px black",
         color: "black",
+
         border: "outset",
         borderRadius: "10px",
+        
         padding: "5px",
         margin: "5px",
         textAlign: "Center",
+        
         width: "100px",
-        boxShadow: "2px 2px 3px black",
+        
         fontWeight: "bolder",
     }
 
@@ -157,11 +174,10 @@ const setBTNClickUp = (e) => {
   const NPC_Generator = () => {
       
     return (
-
-        
-
+// Component Main wrapper
       <div style={NPC_Generator_Style.mainWrap}>
         
+        {/* NPC Option buttons */}
         <h2 style={NPC_Generator_Style.h2}>
             NPC Generator
         </h2>
@@ -189,6 +205,30 @@ const setBTNClickUp = (e) => {
             </div>
 
         </div>
+
+        {/* NPC Basics options */}
+        <h3 style={NPC_Generator_Style.h3}>
+            NPC Basics
+        </h3>
+
+        <div style={NPC_Generator_Style.innerWrap}>
+            <label>
+                <h4>Name</h4>
+                    <input type="text" />
+            </label>
+            
+            <label>
+                <h4>Gender</h4>
+                    <input type="text" />
+            </label>
+            
+            <label>
+                <h4>Race</h4>
+                    <input type="text" />
+            </label>
+            
+        </div>
+
       </div>
     );
   };
