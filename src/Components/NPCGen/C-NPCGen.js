@@ -1,37 +1,23 @@
+//This file contains everything for an NPC Generator.
+//Some components are written in, others are imported (which import their own CSS too)
+
 // ========================IMPORTS
-import { hover } from "@testing-library/user-event/dist/hover";
+import React, { useState } from "react";
+import { Dropdown, Option } from "../Dropdown/C-Dropdown";
+import {
+    mainWrap, header2
+} from "../../styles.js";
+
 
 // ========================GLOBABL VARIABLES
 //is used to check if mouse is hovering. toggled by button functions for mouseover
 let isMouseHovering = false;
 
-
 // ========================CSS VARIABLES
 // CSS Rules for anything with a div tag in this component
 var NPC_Generator_Style = {
-    
-    // mainWrap is an outer wrapper to contain other containers
-    mainWrap: {
-    
-        background: 'linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5))',
-        border: 'solid 2px rgba(150,90,85,0.7)',
-        borderRadius: '8px',
-        
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
 
-        color: 'white',
-        
-        height: '10%',
-        padding: '10px',
-        margin: '50px',
-        
-        width: '90%',
 
-        textAlign: 'center',
-    },
 
 // innerWrap is an inner wrapper to contain elements
     innerWrap: {
@@ -52,17 +38,7 @@ var NPC_Generator_Style = {
         textAlign: 'center',
     },
 
-    h2: {
-      
-        color: '#rgb(203, 186, 151)',
-        textShadow: ' rgb(50, 50, 50) 2px 2px 1px',
-
-        fontSize: '2.3rem',
-        fontFamily: 'Cambria',
-        fontVariant: 'small-caps',
-
-        margin: '5px',
-        },
+ 
 
     h3: {
         
@@ -173,14 +149,22 @@ const setBTNClickUp = (e) => {
     // ========================ACTUAL COMPONENT
   const NPC_Generator = () => {
       
+    //to get data to send back, need a useState.    
+    const [optionValue, setOptionValue] = useState("");
+    const handleSelect = (e) => {
+      console.log(e.target.value);
+      setOptionValue(e.target.value);
+    };
+
     return (
-// Component Main wrapper
-      <div style={NPC_Generator_Style.mainWrap}>
+
+    // mainWrap is an outer wrapper to contain other containers
+    <mainWrap>
         
         {/* NPC Option buttons */}
-        <h2 style={NPC_Generator_Style.h2}>
+        <header2>
             NPC Generator
-        </h2>
+        </header2>
 
         <div style={NPC_Generator_Style.innerWrap}>
 
@@ -212,24 +196,30 @@ const setBTNClickUp = (e) => {
         </h3>
 
         <div style={NPC_Generator_Style.innerWrap}>
-            <label>
-                <h4>Name</h4>
-                    <input type="text" />
-            </label>
             
-            <label>
-                <h4>Gender</h4>
-                    <input type="text" />
-            </label>
+            <h4>Name</h4>
+            <input type="text" />
+                        
+            <h4>Gender</h4>
+            <input type="text" />
             
-            <label>
-                <h4>Race</h4>
-                    <input type="text" />
-            </label>
-            
+            <h4>Race</h4>
+                <Dropdown
+                    onChange={handleSelect}
+                    action = "/">
+                        <Option value= "Dragonborn" />
+                        <Option value= "Dwarf" />
+                        <Option value= "Elf" />
+                        <Option value= "Gnome" />
+                        <Option value= "Halfling" />
+                        <Option value= "Human" />
+                        <Option value= "Orc" />
+                        <Option value= "Tiefling" />
+                </Dropdown>
+                <p>You selected {optionValue} </p>
         </div>
 
-      </div>
+    </mainWrap>
     );
   };
 
