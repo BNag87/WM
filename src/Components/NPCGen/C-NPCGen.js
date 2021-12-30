@@ -5,9 +5,15 @@
 import React, { useState } from "react";
 import { Dropdown, Option } from "../Dropdown/C-Dropdown";
 import {
+<<<<<<< Updated upstream
     MainWrap, Header2
+=======
+    MainWrap, 
+    Header2, 
+    Header3,
+    InnerWrap,
+>>>>>>> Stashed changes
 } from "../../styles.js";
-
 
 // ========================GLOBABL VARIABLES
 //is used to check if mouse is hovering. toggled by button functions for mouseover
@@ -19,6 +25,7 @@ var NPC_Generator_Style = {
 
 
 
+<<<<<<< Updated upstream
 // innerWrap is an inner wrapper to contain elements
     innerWrap: {
 
@@ -51,6 +58,9 @@ var NPC_Generator_Style = {
 
         margin: '5px',
         },
+=======
+
+>>>>>>> Stashed changes
 
 // This is the default css style for a button element. used when the page loads
     compBtnNoneHover : {
@@ -158,9 +168,15 @@ const setBTNClickUp = (e) => {
 
     return (
 
+<<<<<<< Updated upstream
     // MainWrap is an outer wrapper to contain other containers
     <MainWrap>
 
+=======
+    // mainWrap is an outer wrapper to contain other containers
+    <MainWrap>
+        
+>>>>>>> Stashed changes
         {/* NPC Option buttons */}
         <Header2>
             NPC Generator
@@ -191,12 +207,16 @@ const setBTNClickUp = (e) => {
         </div>
 
         {/* NPC Basics options */}
-        <h3 style={NPC_Generator_Style.h3}>
+        <Header3>
             NPC Basics
-        </h3>
+        </Header3>
 
+<<<<<<< Updated upstream
         <div style={NPC_Generator_Style.innerWrap}>
 
+=======
+        <InnerWrap>
+>>>>>>> Stashed changes
             <h4>Name</h4>
             <input type="text" />
 
@@ -217,7 +237,7 @@ const setBTNClickUp = (e) => {
                         <Option value= "Tiefling" />
                 </Dropdown>
                 <p>You selected {optionValue} </p>
-        </div>
+        </InnerWrap>
 
     </MainWrap>
     );
