@@ -15,7 +15,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledOption = styled.option`
-  color: ${(props) => (props.selected ? "lightgrey" : "black")};
+  color: ${({ selected }) => (selected ? "lightgrey" : "black")};
 `;
 
 export const StyledLabel = styled.label`
@@ -32,18 +32,18 @@ export const StyledButton = styled.input`
   border-radius: 1rem;
 `;
 
-    
-// mainWrap is an outer wrapper to contain other containers
-export const mainWrap = styled.div`
 
-    background: linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5);
+// mainWrap is an outer wrapper to contain other containers
+export const MainWrap = styled.div`
+
+    background: linear-gradient(to bottom, rgba(145,85,77,0.5), rgba(185, 156, 107,0.5));
     border: solid 2px rgba(150,90,85,0.7);
-    borderRadius: 8px;
+    border-radius: 8px;
     
     display: flex;
-    justifyContent: center;
-    alignItems: center;
-    flexDirection: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     color: white;
     
@@ -51,18 +51,18 @@ export const mainWrap = styled.div`
     padding: 10px;
     margin: 50px;
     
-    width: 90%,
+    width: 90%;
 
-    textAlign: center
+    text-align: center
 `;
 
-export const header2 = styled.h2`
-    color: #rgb(203, 186, 151);
-    textShadow: rgb(50, 50, 50) 2px 2px 1px;
+export const Header2 = styled.h2`
+    color: rgb(203, 186, 151);
+    text-shadow: rgb(50, 50, 50) 2px 2px 1px;
 
-    fontSize: 2.3rem;
-    fontFamily: Cambria;
-    fontVariant: small-caps;
+    font-size: 2.3rem;
+    font-family: Cambria;
+    font-variant: small-caps;
 
     margin: 5px;
 `;
