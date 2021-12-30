@@ -5,14 +5,11 @@
 import React, { useState } from "react";
 import { Dropdown, Option } from "../Dropdown/C-Dropdown";
 import {
-<<<<<<< Updated upstream
-    MainWrap, Header2
-=======
     MainWrap, 
     Header2, 
     Header3,
+    Header4,
     InnerWrap,
->>>>>>> Stashed changes
 } from "../../styles.js";
 
 // ========================GLOBABL VARIABLES
@@ -23,45 +20,6 @@ let isMouseHovering = false;
 // CSS Rules for anything with a div tag in this component
 var NPC_Generator_Style = {
 
-
-
-<<<<<<< Updated upstream
-// innerWrap is an inner wrapper to contain elements
-    innerWrap: {
-
-        background: 'rgba(230,230,230,0.4)',
-        borderRadius: '25px',
-
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-
-        color: 'white',
-
-        height: '10%',
-        padding: '10px',
-        margin: '10px',
-
-        textAlign: 'center',
-    },
-
-
-
-    h3: {
-
-        color: '#rgb(203, 186, 151)',
-        textShadow: ' rgb(50, 50, 50) 1px 2px 3px',
-
-        fontSize: '1.5 rem',
-        fontFamily: 'Cambria',
-        fontVariant: 'small-caps',
-
-        margin: '5px',
-        },
-=======
-
->>>>>>> Stashed changes
-
 // This is the default css style for a button element. used when the page loads
     compBtnNoneHover : {
         backgroundColor: "rgb(100,250,100)",
@@ -70,13 +28,13 @@ var NPC_Generator_Style = {
 
         border: "outset",
         borderRadius: "10px",
-
+        
         padding: "5px",
         margin: "5px",
         textAlign: "Center",
-
+        
         width: "100px",
-
+        
         fontWeight: "bolder",
     }
 
@@ -86,7 +44,7 @@ var NPC_Generator_Style = {
 const setBTNHoverBtnON = (e) => {
 
     isMouseHovering = true
-
+    
     // This function fires when a button is entered by the mouse, changing its style
     compBtn: {
 
@@ -98,7 +56,7 @@ const setBTNHoverBtnON = (e) => {
 }
 
 const setBTNHoverBtnOFF = (e) => {
-
+    
     isMouseHovering = false
 
     // This function fires when a button is left by the mouse, changing its style
@@ -119,7 +77,7 @@ const setBTNClickDown = (e) => {
         e.target.style.fontWeight = "100";
         e.target.style.borderRadius = "15px";
         e.target.style.border = "inset";
-
+        
     }
 }
 
@@ -128,11 +86,11 @@ const setBTNClickUp = (e) => {
     if(isMouseHovering)
     {
         console.log("Hovering after click: " + isMouseHovering)
-    compBtn:
+    compBtn: 
         {
             //if user is still hovering over button when click is released...
             {
-
+                
                 e.target.style.background = "rgb(100,250,100)";
                 e.target.style.color = "white";
                 e.target.style.fontWeight = "bolder";
@@ -144,7 +102,7 @@ const setBTNClickUp = (e) => {
     else
     {
         console.log("Hovering after click: " + isMouseHovering)
-        compBtn:
+        compBtn: 
         //if user is NOT still hovering over button when click is released...
         {
             e.target.style.background = "rgb(100,250,100)";
@@ -158,32 +116,27 @@ const setBTNClickUp = (e) => {
 
     // ========================ACTUAL COMPONENT
   const NPC_Generator = () => {
-
-    //to get data to send back, need a useState.
+      
+    //to get data to send back, need a useState.    
     const [optionValue, setOptionValue] = useState("");
-    const handleSelect = (e) => {
-      console.log(e.target.value);
-      setOptionValue(e.target.value);
+    const handleSelect = (e) => 
+    {
+        console.log(e.target.value);
+        setOptionValue(e.target.value);
     };
 
     return (
 
-<<<<<<< Updated upstream
-    // MainWrap is an outer wrapper to contain other containers
-    <MainWrap>
-
-=======
     // mainWrap is an outer wrapper to contain other containers
     <MainWrap>
         
->>>>>>> Stashed changes
-        {/* NPC Option buttons */}
+       
         <Header2>
             NPC Generator
         </Header2>
 
-        <div style={NPC_Generator_Style.innerWrap}>
-
+        <InnerWrap flexRow>
+        
             <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
                 Randomise
             </div>
@@ -204,29 +157,32 @@ const setBTNClickUp = (e) => {
                 Delete
             </div>
 
-        </div>
+        </InnerWrap>
 
         {/* NPC Basics options */}
         <Header3>
             NPC Basics
         </Header3>
 
-<<<<<<< Updated upstream
-        <div style={NPC_Generator_Style.innerWrap}>
-
-=======
         <InnerWrap>
->>>>>>> Stashed changes
-            <h4>Name</h4>
-            <input type="text" />
+            <Header4>
+                Name
+            </Header4>
+                <input type="text" />
+                        
+            <Header4>
+                Gender
+            </Header4>
+                <input type="text" />
+            
+            <Header4>
+                Race
+            </Header4>
 
-            <h4>Gender</h4>
-            <input type="text" />
-
-            <h4>Race</h4>
                 <Dropdown
-                    onChange={handleSelect}
-                    action = "/">
+                onChange={handleSelect}
+                action = "/"
+                >
                         <Option value= "Dragonborn" />
                         <Option value= "Dwarf" />
                         <Option value= "Elf" />
