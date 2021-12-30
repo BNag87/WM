@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import { Dropdown, Option } from "../Dropdown/C-Dropdown";
 import {
-    mainWrap, header2
+    MainWrap, Header2
 } from "../../styles.js";
 
 
@@ -21,7 +21,7 @@ var NPC_Generator_Style = {
 
 // innerWrap is an inner wrapper to contain elements
     innerWrap: {
-        
+
         background: 'rgba(230,230,230,0.4)',
         borderRadius: '25px',
 
@@ -30,7 +30,7 @@ var NPC_Generator_Style = {
         alignItems: 'center',
 
         color: 'white',
-        
+
         height: '10%',
         padding: '10px',
         margin: '10px',
@@ -38,10 +38,10 @@ var NPC_Generator_Style = {
         textAlign: 'center',
     },
 
- 
+
 
     h3: {
-        
+
         color: '#rgb(203, 186, 151)',
         textShadow: ' rgb(50, 50, 50) 1px 2px 3px',
 
@@ -50,7 +50,7 @@ var NPC_Generator_Style = {
         fontVariant: 'small-caps',
 
         margin: '5px',
-        },        
+        },
 
 // This is the default css style for a button element. used when the page loads
     compBtnNoneHover : {
@@ -60,13 +60,13 @@ var NPC_Generator_Style = {
 
         border: "outset",
         borderRadius: "10px",
-        
+
         padding: "5px",
         margin: "5px",
         textAlign: "Center",
-        
+
         width: "100px",
-        
+
         fontWeight: "bolder",
     }
 
@@ -76,7 +76,7 @@ var NPC_Generator_Style = {
 const setBTNHoverBtnON = (e) => {
 
     isMouseHovering = true
-    
+
     // This function fires when a button is entered by the mouse, changing its style
     compBtn: {
 
@@ -88,7 +88,7 @@ const setBTNHoverBtnON = (e) => {
 }
 
 const setBTNHoverBtnOFF = (e) => {
-    
+
     isMouseHovering = false
 
     // This function fires when a button is left by the mouse, changing its style
@@ -109,7 +109,7 @@ const setBTNClickDown = (e) => {
         e.target.style.fontWeight = "100";
         e.target.style.borderRadius = "15px";
         e.target.style.border = "inset";
-        
+
     }
 }
 
@@ -118,11 +118,11 @@ const setBTNClickUp = (e) => {
     if(isMouseHovering)
     {
         console.log("Hovering after click: " + isMouseHovering)
-    compBtn: 
+    compBtn:
         {
             //if user is still hovering over button when click is released...
             {
-                
+
                 e.target.style.background = "rgb(100,250,100)";
                 e.target.style.color = "white";
                 e.target.style.fontWeight = "bolder";
@@ -134,7 +134,7 @@ const setBTNClickUp = (e) => {
     else
     {
         console.log("Hovering after click: " + isMouseHovering)
-        compBtn: 
+        compBtn:
         //if user is NOT still hovering over button when click is released...
         {
             e.target.style.background = "rgb(100,250,100)";
@@ -148,8 +148,8 @@ const setBTNClickUp = (e) => {
 
     // ========================ACTUAL COMPONENT
   const NPC_Generator = () => {
-      
-    //to get data to send back, need a useState.    
+
+    //to get data to send back, need a useState.
     const [optionValue, setOptionValue] = useState("");
     const handleSelect = (e) => {
       console.log(e.target.value);
@@ -158,13 +158,13 @@ const setBTNClickUp = (e) => {
 
     return (
 
-    // mainWrap is an outer wrapper to contain other containers
-    <mainWrap>
-        
+    // MainWrap is an outer wrapper to contain other containers
+    <MainWrap>
+
         {/* NPC Option buttons */}
-        <header2>
+        <Header2>
             NPC Generator
-        </header2>
+        </Header2>
 
         <div style={NPC_Generator_Style.innerWrap}>
 
@@ -196,13 +196,13 @@ const setBTNClickUp = (e) => {
         </h3>
 
         <div style={NPC_Generator_Style.innerWrap}>
-            
+
             <h4>Name</h4>
             <input type="text" />
-                        
+
             <h4>Gender</h4>
             <input type="text" />
-            
+
             <h4>Race</h4>
                 <Dropdown
                     onChange={handleSelect}
@@ -219,7 +219,7 @@ const setBTNClickUp = (e) => {
                 <p>You selected {optionValue} </p>
         </div>
 
-    </mainWrap>
+    </MainWrap>
     );
   };
 
