@@ -10,35 +10,13 @@ import {
     Header3,
     Header4,
     InnerWrap,
+    GridInnerWrap,
+    Button,
 } from "../../styles.js";
 
 // ========================GLOBABL VARIABLES
 //is used to check if mouse is hovering. toggled by button functions for mouseover
 let isMouseHovering = false;
-
-// ========================CSS VARIABLES
-// CSS Rules for anything with a div tag in this component
-var NPC_Generator_Style = {
-
-// This is the default css style for a button element. used when the page loads
-    compBtnNoneHover : {
-        backgroundColor: "rgb(100,250,100)",
-        boxShadow: "2px 2px 3px black",
-        color: "black",
-
-        border: "outset",
-        borderRadius: "10px",
-        
-        padding: "5px",
-        margin: "5px",
-        textAlign: "Center",
-        
-        width: "100px",
-        
-        fontWeight: "bolder",
-    }
-
-    };
 
     // ========================CUSTOM FUNCTIONS
 const setBTNHoverBtnON = (e) => {
@@ -118,7 +96,7 @@ const setBTNClickUp = (e) => {
   const NPC_Generator = () => {
       
     //to get data to send back, need a useState.    
-    const [optionValue, setOptionValue] = useState("");
+    const [optionValue, setOptionValue] = useState("None");
     const handleSelect = (e) => 
     {
         console.log(e.target.value);
@@ -137,52 +115,40 @@ const setBTNClickUp = (e) => {
 
         <InnerWrap flexRow>
         
-            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+            <Button>
                 Randomise
-            </div>
+            </Button>
 
-            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+            <Button>
                 New NPC
-            </div>
+            </Button>
 
-            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+            <Button>
                 Save
-            </div>
+            </Button>
 
-            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+            <Button>
                 Load
-            </div>
+            </Button>
 
-            <div className="compBtn" style={NPC_Generator_Style.compBtnNoneHover} onMouseOver={setBTNHoverBtnON} onMouseLeave={setBTNHoverBtnOFF} onMouseDown={setBTNClickDown} onMouseUp={setBTNClickUp}>
+            <Button>
                 Delete
-            </div>
+            </Button>
 
         </InnerWrap>
 
         {/* NPC Basics options */}
-        <Header3>
-            NPC Basics
-        </Header3>
+        <Header3>NPC Basics</Header3>
 
         <InnerWrap>
-            <Header4>
-                Name
-            </Header4>
-                <input type="text" />
+            <Header4>Name</Header4>
+            <input type="text" />
                         
-            <Header4>
-                Gender
-            </Header4>
+            <Header4>Gender</Header4>
                 <input type="text" />
             
-            <Header4>
-                Race
-            </Header4>
-
-                <Dropdown
-                onChange={handleSelect}
-                action = "/"
-                >
+            <Header4>Race</Header4>
+                <Dropdown onChange={handleSelect}>
                         <Option value= "Dragonborn" />
                         <Option value= "Dwarf" />
                         <Option value= "Elf" />
@@ -194,6 +160,25 @@ const setBTNClickUp = (e) => {
                 </Dropdown>
                 <p>You selected {optionValue} </p>
         </InnerWrap>
+
+        {/* This section is for alignment buttons */}
+        <Header3>NPC Alignment</Header3>
+
+        <GridInnerWrap>
+            
+            <Button>LG</Button>
+            <Button>NG</Button>
+            <Button>CG</Button>
+            
+            <Button>LN</Button>
+            <Button>TN</Button>
+            <Button>CN</Button>
+            
+            <Button>LE</Button>
+            <Button>NE</Button>
+            <Button>CE</Button>
+
+        </GridInnerWrap>
 
     </MainWrap>
     );

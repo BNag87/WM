@@ -1,6 +1,7 @@
 // This file provides css styles to components in the project
 import styled, { css } from "styled-components";
 
+//style for a form
 export const DropdownWrapper = styled.form`
   display: flex;
   flex-flow: column;
@@ -8,6 +9,7 @@ export const DropdownWrapper = styled.form`
   
 `;
 
+//style for a select element (dropdown)
 export const StyledSelect = styled.select`
   width: auto;
   height: 100%;
@@ -15,22 +17,35 @@ export const StyledSelect = styled.select`
   margin-top: -16px;
 `;
 
+//style for select options (a dropdown option)
 export const StyledOption = styled.option`
   color: ${({ selected }) => (selected ? "lightgrey" : "black")};
 `;
 
+//style for labels
 export const StyledLabel = styled.label`
   margin-bottom: 1rem;
 `;
 
-export const StyledButton = styled.input`
-  max-width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  border: solid 2px blue;
-  padding: 0.5rem;
-  border-radius: 1rem;
+//style for a button
+export const Button = styled.button`
+  background-color: rgb(100,250,100);
+  box-shadow: 2px 2px 3px black;
+  color: black;
+
+  border: outset;
+  border-radius: 10px;
+  
+  padding: 5px;
+  margin: 5px;
+  text-align: Center;
+  
+  width: auto;
+  
+  font-weight: bolder;
+  font-size: 1.5rem;
+  font-variant: small-caps;
+
 `;
 
 
@@ -57,7 +72,7 @@ export const MainWrap = styled.div`
     text-align: center
 `;
 
-// mainWrap is an outer wrapper to contain other containers
+// InnerWrap is a wrapper to contain individual elements in a component
 export const InnerWrap = styled.div`
 
     background: linear-gradient(to bottom, rgba(145,85,77,0.7), rgba(185, 156, 107, 0.5));
@@ -88,6 +103,12 @@ export const InnerWrap = styled.div`
   `}
 `;
 
+// A new component based on Innerwrap, but with its display style overwritten
+export const GridInnerWrap = styled(InnerWrap)`
+  display: grid
+`;
+
+//this is a h2 style
 export const Header2 = styled.h2`
     color: white;
     text-shadow: rgb(50, 50, 50) 2px 2px 1px;
@@ -99,6 +120,7 @@ export const Header2 = styled.h2`
     margin: 5px;
 `;
 
+//this is a h3 style
 export const Header3 = styled.h3`
     color: white;
     text-shadow: rgb(50, 50, 50) 2px 2px 1px;
@@ -110,6 +132,7 @@ export const Header3 = styled.h3`
     margin: 5px;
 `;
 
+//this is a h4 style
 export const Header4 = styled.h4`
     color: lightgray;
     text-shadow: rgb(50, 50, 50) 2px 2px 1px;
