@@ -10,89 +10,15 @@ import {
     Header3,
     Header4,
     InnerWrap,
-    GridInnerWrap,
     Button,
 } from "../../styles.js";
 
+
 // ========================GLOBABL VARIABLES
-//is used to check if mouse is hovering. toggled by button functions for mouseover
-let isMouseHovering = false;
 
-    // ========================CUSTOM FUNCTIONS
-const setBTNHoverBtnON = (e) => {
+// ========================CUSTOM FUNCTIONS
 
-    isMouseHovering = true
-    
-    // This function fires when a button is entered by the mouse, changing its style
-    compBtn: {
-
-        e.target.style.background = "rgb(100,250,100)";
-        e.target.style.color = "white";
-        e.target.style.borderRadius = "10px";
-        e.target.style.fontWeight = "bolder";
-    }
-}
-
-const setBTNHoverBtnOFF = (e) => {
-    
-    isMouseHovering = false
-
-    // This function fires when a button is left by the mouse, changing its style
-    compBtn: {
-        e.target.style.background = "rgb(100,250,100)";
-        e.target.style.color = "black";
-        e.target.style.borderRadius = "10px";
-        e.target.style.fontWeight = "bolder";
-        e.target.style.border = "outset";
-    }
-}
-
-const setBTNClickDown = (e) => {
-    // This function fires when a button is clicked by the mouse, changing its style
-    compBtn: {
-        e.target.style.background = "rgb(50,200,50)";
-        e.target.style.color = "rgb(240,240,240)";
-        e.target.style.fontWeight = "100";
-        e.target.style.borderRadius = "15px";
-        e.target.style.border = "inset";
-        
-    }
-}
-
-const setBTNClickUp = (e) => {
-    // This function fires when a button is unclicked by the mouse, changing its style
-    if(isMouseHovering)
-    {
-        console.log("Hovering after click: " + isMouseHovering)
-    compBtn: 
-        {
-            //if user is still hovering over button when click is released...
-            {
-                
-                e.target.style.background = "rgb(100,250,100)";
-                e.target.style.color = "white";
-                e.target.style.fontWeight = "bolder";
-                e.target.style.borderRadius = "10px";
-                e.target.style.border = "outset";
-            }
-        }
-    }
-    else
-    {
-        console.log("Hovering after click: " + isMouseHovering)
-        compBtn: 
-        //if user is NOT still hovering over button when click is released...
-        {
-            e.target.style.background = "rgb(100,250,100)";
-            e.target.style.color = "black";
-            e.target.style.fontWeight = "bolder";
-            e.target.style.borderRadius = "10px";
-            e.target.style.border = "outset";
-        }
-    }
-}
-
-    // ========================ACTUAL COMPONENT
+// ========================ACTUAL COMPONENT
   const NPC_Generator = () => {
       
     //to get data to send back, need a useState.    
@@ -105,7 +31,7 @@ const setBTNClickUp = (e) => {
 
     return (
 
-    // mainWrap is an outer wrapper to contain other containers
+        // mainWrap is an outer wrapper to contain other containers
     <MainWrap>
         
        
@@ -140,7 +66,7 @@ const setBTNClickUp = (e) => {
         {/* NPC Basics options */}
         <Header3>NPC Basics</Header3>
 
-        <InnerWrap>
+        <InnerWrap flexColumn>
             <Header4>Name</Header4>
             <input type="text" />
                         
@@ -159,28 +85,60 @@ const setBTNClickUp = (e) => {
                         <Option value= "Tiefling" />
                 </Dropdown>
                 <p>You selected {optionValue} </p>
+
+            <InnerWrap>
+            <Header4>Randomise All</Header4>
+                <Button RANDALLButton></Button>
+            </InnerWrap>
         </InnerWrap>
 
         {/* This section is for alignment buttons */}
         <Header3>NPC Alignment</Header3>
 
-        <GridInnerWrap>
+        <InnerWrap flexRowAlignment>
             
-            <Button>LG</Button>
-            <Button>NG</Button>
-            <Button>CG</Button>
+            <Button LGButton>LG</Button>
+            <Button NGButton>NG</Button>
+            <Button CGButton>CG</Button>
             
-            <Button>LN</Button>
-            <Button>TN</Button>
-            <Button>CN</Button>
+            <Button LNButton>LN</Button>
+            <Button TNButton>TN</Button>
+            <Button CNButton>CN</Button>
             
-            <Button>LE</Button>
-            <Button>NE</Button>
-            <Button>CE</Button>
+            <Button LEButton>LE</Button>
+            <Button NEButton>NE</Button>
+            <Button CEButton>CE</Button>
 
-        </GridInnerWrap>
+        </InnerWrap>
+
+        {/* This section is for NPC Traits */}
+        <Header3>NPC Traits</Header3>
+        <InnerWrap flexColumn>
+
+            <Header4>Talent</Header4>
+                <input type="text" />
+                <Button RANDButton></Button>
+                        
+            <Header4>Nature</Header4>
+                <input type="text" />
+                <Button RANDButton></Button>
+
+            <Header4>Bond</Header4>
+                <input type="text" />
+                <Button RANDButton></Button>
+
+            <Header4>Traits</Header4>
+                <input type="text" />
+                <Button RANDButton></Button>
+
+            <InnerWrap>
+            <Header4>Randomise All</Header4>
+                <Button RANDALLButton></Button>
+            </InnerWrap>
+        </InnerWrap>
 
     </MainWrap>
+
     );
   };
 
